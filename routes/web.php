@@ -14,6 +14,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/inicio', function () {
+    return view('paginas.home');
+});
+
 Route::get('/produtos','ProdutoController@lista');
 
 Route::get('/produtos/mostra/{id}', 'ProdutoController@mostra')->where('id','[0-9]+');

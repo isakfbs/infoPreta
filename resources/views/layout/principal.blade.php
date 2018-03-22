@@ -16,19 +16,26 @@
 				<div class="container-fluid">
 				
 					<div class="navbar-header">
-						<a class="navbar-brand" href="/produtos">Estoque Laravel</a>
+						<span class="navbar-brand mb-0 h1" href="#">Estoque Laravel</span>
 					</div>
 				
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="{{ action('ProdutoController@lista') }}">Listagem</a></li>
-	  					<li><a href="{{ action('ProdutoController@novo') }}">Novo</a></li>
+						<li>
+							<a href="{{ action('ProdutoController@lista') }}">Listagem</a>
+						</li>
+	  					<li>
+	  						<a href="{{ action('ProdutoController@novo') }}">Novo</a>
+	  					</li>
+	  					<li>
+							<a href="/inicio" > Home</a>
+						</li>
 
 					</ul>	
 				</div>
 			</nav>
 			@yield('conteudo')
 			<footer class="footer">
-				<p>©</p>
+				<p>©InfoPreta</p>
 			</footer>
 		</div>
 			
