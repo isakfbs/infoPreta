@@ -11,12 +11,12 @@
 |
 */
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
-Route::get('/inicio', function () {
+/**Route::get('/inicio', function () {
     return view('paginas.home');
-});
+});**/
 
 Route::get('/produtos','ProdutoController@lista');
 

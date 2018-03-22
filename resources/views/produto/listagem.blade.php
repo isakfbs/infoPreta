@@ -1,5 +1,5 @@
 
-@extends('layout/principal')
+@extends('layouts.padrao')
 
 @section('conteudo')
 
@@ -30,11 +30,6 @@
 		@endforeach 
 	</table>
 @endif
-<h4>
-	<span class="alert alert-danger">
-		Um ou menos itens no estoque
-	</span>
-</h4>
 
 @if(old('nome'))	
 <div class="alert alert-success">
