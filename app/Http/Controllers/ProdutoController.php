@@ -21,6 +21,12 @@ class ProdutoController extends Controller
 		return view('produto/listagem')->withProdutos($produtos);
 	}
 
+	public function home()
+	{	
+		$produtos = Produto::paginate(9);	
+		return view('home')->withProdutos($produtos);
+	}
+
 	public function listaJson()
 	{
 		$produtos = Produto::all();

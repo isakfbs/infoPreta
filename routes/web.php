@@ -18,6 +18,8 @@ Route::get('/', function () {
     return view('paginas.home');
 });**/
 
+Route::get('/vitrine', 'ProdutoController@vitrine');
+
 Route::get('/produtos','ProdutoController@lista');
 
 Route::get('/produtos/mostra/{id}', 'ProdutoController@mostra')->where('id','[0-9]+');
@@ -32,4 +34,4 @@ Route::get('/produtos/json', 'ProdutoController@listaJson');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'ProdutoController@home')->name('home');

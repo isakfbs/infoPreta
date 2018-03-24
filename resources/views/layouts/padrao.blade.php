@@ -22,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
     <!-- Css local -->
     <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
-    <link rel="stylesheet" type="text/css" href="/css/estilo.css">   
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">   
 
     <title>{{ config('app.name', 'InfoPreta') }}</title>
   </head>
@@ -41,7 +41,7 @@
         <ul class="navbar-nav mr-auto">
           <!--link para pagina inicial-->        
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="{{ route('home') }}">Home</a>
           </li>
           <!--link para pagina de produtos-->
           <li class="nav-item dropdown">

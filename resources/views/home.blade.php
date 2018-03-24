@@ -45,33 +45,31 @@
 	  </p>
 	</div>
 	
-	<!-- Conteudo-->
-	<section class="w-100 p-3 container-fluid">
-		<!-- pegar uma array de produtos e mostrar com foreach-->
-			<div class="container">
-			@for($a = 0;$a < 4;$a++)
-				<div class="card-group">
-					@for($i = 0;$i < 4;$i++)
-					<div class="card">
-					  <img class="img-thumbnail img-fluid card-img-top " src="/img/processador-icon.jpg" alt="Card image cap">
-					  <div class="card-body">
-							<h5 class="card-title">Processador</h5>
-						    <p class="card-text">Processador intel i5 </p>
-						    <a href="#" class="btn btn-primary">Enviar para carrinho</a>
-					  </div>
-					</div>
-					@endfor
+	<!-- Vitrine de produtos -->
+	<section class="container">
+		<!-- pegar uma array de produtos e mostrar com foreach-->		
+	<div class="container" role="main">
+		<div class="page-header">
+			<h1>Produtos</h1>
+		</div>
+		<div class="row">
+			@foreach($produtos as $p)		
+ 				<div class="col-sm-6 col-md-4 ">
+				    <div class="thumbnail">
+				      	<img class="img-fluid img-thumbnail" src="img/produto.png" alt="...">
+				      	<div class="caption">
+				        	<h3>{{ $p->nome }}</h3>
+				        	<p>{{ $p->descricao }}</p>
+				        	<p><a href="{{action('ProdutoController@mostra', $p->id)}}" class="btn btn-primary" role="button">Comprar</a> 
+				      	</div>
+				    </div>
 				</div>
-			@endfor
-		</div>		
-		<nav aria-label="Page navigation example">
-		  <ul class="pagination">
-		    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-		    <li class="page-item"><a class="page-link" href="#">1</a></li>
-		    <li class="page-item"><a class="page-link" href="#">2</a></li>
-		    <li class="page-item"><a class="page-link" href="#">3</a></li>
-		    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-		  </ul>
-		</nav>
+			@endforeach
+		</div>
+		<!-- Paginacao --> 
+		{{ $produtos->links() }}
+	</div>
+
 	</section>
+
 @stop
