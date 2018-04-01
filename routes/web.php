@@ -14,24 +14,35 @@ Route::get('/', function () {
     return view('home');
 });
 
+//Pagina Inicial
+Route::get('/home', 'HomeController@index')->name('home');
+
 /**Route::get('/inicio', function () {
     return view('paginas.home');
 });**/
 
+//Pagina de produtos 
+Route::get('/produtos', 'ProdutoController@paginaProdutos')->name('produtos');
+
 Route::get('/vitrine', 'ProdutoController@vitrine');
 
-Route::get('/produtos','ProdutoController@lista');
+//detalhes do produto
+Route::get('/produtos/detalhes/{id}', 'ProdutoController@mostra')->where('id','[0-9]+');
 
-Route::get('/produtos/mostra/{id}', 'ProdutoController@mostra')->where('id','[0-9]+');
 
+//Admin
+//Listra de produtos (Adimin)
+Route::get('/listaprodutos','ProdutoController@lista');
+Route::get('/listaprodutos/json', 'ProdutoController@listaJson');
+
+//Adicionar produto formulario
 Route::get('/produtos/novo','ProdutoController@novo');
-
-Route::get('/produtos/remove/{id}', 'ProdutoController@remove');
-
 Route::post('/produtos/adiciona','ProdutoController@adiciona');
 
-Route::get('/produtos/json', 'ProdutoController@listaJson');
+//Remover produto
+Route::get('/produtos/remove/{id}', 'ProdutoController@remove');
 
+//Autenticacão
 Auth::routes();
 
-Route::get('/home', 'ProdutoController@home')->name('home');
+

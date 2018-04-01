@@ -15,24 +15,28 @@ class ProdutoController extends Controller
 		$this->middleware('auth',['only' => ['adiciona','remove']]);
 	}
 
+	//retorna a listagem de produtos do banco de dados
 	public function lista()
 	{	
 		$produtos = Produto::all();	
 		return view('produto/listagem')->withProdutos($produtos);
 	}
 
-	public function home()
-	{	
-		$produtos = Produto::paginate(9);	
-		return view('home')->withProdutos($produtos);
+	//retorna a pagina de produtos.
+	public function paginaProdutos()
+	{
+		$produtos = Produto::paginate(6);
+		return view('produto/produtos')->withProdutos($produtos); 
 	}
 
+	//Retorna a lista de produtos no formato Json
 	public function listaJson()
 	{
 		$produtos = Produto::all();
    		return $produtos;
 	}
 
+	//Retorna a pagina de detalhes do produto
 	public function mostra($id)
 	{
 		$produto = Produto::find($id);
@@ -44,11 +48,13 @@ class ProdutoController extends Controller
 	return view('produto/detalhes')->with('p',$produto);
 	}
 
+	//Retorna a view do formulario de cadastro de produtos
 	public function novo()
 	{
 		return view('produto/formulario')->with('categorias',Categoria::all());
 	}
 
+	//Adiciona um produto e redireciona para a lista
 	public function adiciona(ProdutosRequest $request)
 	{
 		//pega todos os dados do formulario
@@ -61,7 +67,8 @@ class ProdutoController extends Controller
 		return redirect()->action('ProdutoController@lista')->withInput(Request::only('nome'));
 	}
 
-		public function remove($id)
+	//Remove um produto, e redireciona para a lista
+	public function remove($id)
 	{
 		$produto = Produto::find($id);
     	$produto->delete();

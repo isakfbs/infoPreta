@@ -23,7 +23,8 @@
     <!-- Css local -->
     <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
     <link rel="stylesheet" type="text/css" href="/css/custom.css">   
-
+    <!-- Js local -->
+    
     <title>{{ config('app.name', 'InfoPreta') }}</title>
   </head>
   <body>
@@ -44,14 +45,8 @@
             <a class="nav-link" href="{{ route('home') }}">Home</a>
           </li>
           <!--link para pagina de produtos-->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produtos
-            </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Ferramentas</a>
-                <a class="dropdown-item" href="#">Periféricos</a>
-                <a class="dropdown-item" href="#">Computadores</a>
-              </div>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('produtos') }}">Produtos</a>
           </li>
           <!--link para pagina sobre-->   
           <li class="nav-item">

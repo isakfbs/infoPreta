@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">InfoPretaApp</string>
+    <string name="mensagem_login">Faca seu Login</string>
+    <string name="action_buscar">buscar</string>
+    <string name="action_share">share</string>
+    <string name="action_atualizar">atualizar</string>
+    <string name="action_adicionar">adicionar</string>
+    <string name="action_config">configuracoes</string>
+</resources>
