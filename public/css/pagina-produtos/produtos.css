@@ -1,0 +1,38 @@
+/* Conteudo da pagina de produtos*/
+section .produtos{
+  height: auto;
+  box-shadow: 1px 0.5px;
+}
+
+/* Menu lateral da pagina de produtos*/
+.sidemenu
+{ 
+  
+  padding: 3%;
+  margin-right:5%;
+  width: 15%;
+  height: auto;
+  display: inline-block;
+  float: left;
+  box-sizing: border-box;
+
+}
+
+/* Vitrine de produtos*/
+.vitrine
+{
+  border-left: 0.5px solid black;
+  width: 80%;
+  display: inline-block;
+  padding: 0 0 2% 2px;
+  height: auto;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.row
+{
+  padding: 0;
+  margin: 0px;
+  height: 50%;
+}

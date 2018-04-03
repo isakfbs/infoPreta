@@ -1,41 +1,31 @@
-nav.navbar.navbar-default{
-  background-color: #337ab7;
-  border-color: #2e6da4;
-  margin-top: 10px;
+/*Geral*/
+*  {
+    margin:0;
+    padding:0;
 }
 
-nav.navbar.navbar-default a {
-  color: white;
+html, body {
+  height:100%;
 }
 
-li p.navbar-text, a.navbar-brand {
-  color: white!important;
-  font-weight: bolder;
+/*Formulario de login*/
+#login{
+  padding: 50px;
+  height: 100%;
 }
 
-footer.footer {
-  background-color: #337ab7;
-  border-color: #2e6da4;
-  margin-top: 55px;
-  color: white;
-  border-radius: 5px;
-}
 
-footer.footer p {
-  padding: 10px;
-}
-
+/*Rodapé*/
 footer  {
   background-color: #333;
   color: #fff;
+  margin:auto;
   padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
-#login{
-  padding: 50px;
+footer p {
+  padding: 10px;
 }
-
-/* Side menu*/
-
-
-  
