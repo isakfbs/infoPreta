@@ -1,0 +1,29 @@
+div{}
+
+h1{}
+
+.listagem{
+	height: 100%;
+}
+
+.tabela-produtos{}
+
+.tabela-cabecalho{}
+
+.tabela-conteudo{}
+
+.tabela-opcoes{}
+
+.novo-produto{
+	margin: 0;
+	display: block;
+	float: right;	
+}
+
+.paginacao
+{
+	float: left;
+}
+
+
+

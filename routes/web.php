@@ -45,4 +45,5 @@ Route::get('/produtos/remove/{id}', 'ProdutoController@remove');
 //Autenticacão
 Auth::routes();
 
-
+// usage inside a laravel route
+Route::get('/a', 'ImagemController@editarImagem');

@@ -1,21 +1,9 @@
 /* Conteudo da pagina de produtos*/
-section .produtos{
+.produtos{
   height: auto;
   box-shadow: 1px 0.5px;
-}
-
-/* Menu lateral da pagina de produtos*/
-.sidemenu
-{ 
-  
-  padding: 3%;
-  margin-right:5%;
-  width: 15%;
-  height: auto;
-  display: inline-block;
-  float: left;
-  box-sizing: border-box;
-
+  position: relative;
+  background-color: rgba(0,0,0,0.2);
 }
 
 /* Vitrine de produtos*/
@@ -28,6 +16,7 @@ section .produtos{
   height: auto;
   margin: 0px;
   box-sizing: border-box;
+  position: static;
 }
 
 .row

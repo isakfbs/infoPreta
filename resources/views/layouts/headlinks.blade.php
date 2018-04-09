@@ -11,5 +11,8 @@
     <!--<link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
     <link rel="stylesheet" type="text/css" href="/css/custom.css">   
     <link rel="stylesheet" type="text/css" href="/css/pagina-produtos/produtos.css"> 
+    <link rel="stylesheet" type="text/css" href="/css/pagina-produtos/side-menu.css"> 
+    <link rel="stylesheet" type="text/css" href="/css/listagem/listagem.css"> 
     <link rel="stylesheet" type="text/css" href="/css/layouts/navbar.css"> 
+    <link rel="stylesheet" type="text/css" href="/css/main/carousel.css"> 
     

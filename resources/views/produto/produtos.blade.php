@@ -7,6 +7,7 @@
 		@include('produto.side-menu')
 		<!-- Vitrine de produtos -->		
 		@include('produto.vitrine')
+		
 	</section>
 	
 @stop

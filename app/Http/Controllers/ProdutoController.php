@@ -7,6 +7,7 @@ use App\Produto;
 use App\Http\Requests\ProdutosRequest;
 use Request;
 use App\Categoria;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class ProdutoController extends Controller
 {
@@ -18,15 +19,16 @@ class ProdutoController extends Controller
 	//retorna a listagem de produtos do banco de dados
 	public function lista()
 	{	
-		$produtos = Produto::all();	
-		return view('produto/listagem')->withProdutos($produtos);
+		$produtos = Produto::paginate(10);	
+		return view('produto.listagem')->withProdutos($produtos);
 	}
 
 	//retorna a pagina de produtos.
 	public function paginaProdutos()
 	{
-		$produtos = Produto::paginate(6);
-		return view('produto/produtos')->withProdutos($produtos); 
+		$categorias = Categoria::all();
+		$produtos = Produto::paginate(9);
+		return view('produto.produtos', ['produtos' => $produtos],['categorias' => $categorias]);
 	}
 
 	//Retorna a lista de produtos no formato Json

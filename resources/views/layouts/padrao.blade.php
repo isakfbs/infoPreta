@@ -6,7 +6,7 @@
   <head>
     <!-- Required meta tags -->
     <title>{{ config('app.name', 'InfoPreta') }}</title>
-    
+    <link rel="icon" href="img/info.png">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,7 +22,7 @@
   <body>
 
       <!-- Menu de navegação principal -->   
-      @include('layouts.navbar');
+      @include('layouts.navbar')
 
       <!-- Aqui sera importado o conteudo da pagina -->
       @yield('conteudo')
