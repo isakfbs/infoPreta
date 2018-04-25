@@ -27,8 +27,8 @@ class ProdutoController extends Controller
 	public function paginaProdutos()
 	{
 		$categorias = Categoria::all();
-		$produtos = Produto::paginate(9);
-		return view('produto.produtos', ['produtos' => $produtos],['categorias' => $categorias]);
+		$produtos = Produto::paginate(10);
+		return view('Theme.paginas.shop', ['produtos' => $produtos],['categorias' => $categorias]);
 	}
 
 	//Retorna a lista de produtos no formato Json
@@ -39,15 +39,20 @@ class ProdutoController extends Controller
 	}
 
 	//Retorna a pagina de detalhes do produto
-	public function mostra($id)
+	public function mostra($id = null)
 	{
-		$produto = Produto::find($id);
-		if(empty($produto))
-		{ 
-			return "Esse produto não existe";
-		}
+        if( !empty($id) ) {
+            $produto = Produto::where([
+                'id'    => $id,
+                'ativo' => 'S'
+                ])->first();
 
-	return view('produto/detalhes')->with('p',$produto);
+            if( !empty($produto) ) {
+            	$categorias = Categoria::all();
+                return view('Theme.paginas.product', compact('produto','categorias'));
+            }
+        }
+        return redirect()->route('index');
 	}
 
 	//Retorna a view do formulario de cadastro de produtos

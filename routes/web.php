@@ -10,24 +10,33 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Autenticacão
+Auth::routes();
+
 Route::get('/', function () {
-    return view('home');
+    return view('Theme.paginas.index');
 });
 
+Route::get('/carrinho', 'CarrinhoController@index')->name('carrinho.index');
+
+Route::get('/carrinho/adicionar', function() {
+	return redirect()->route('index');
+});
+
+Route::post('/carrinho/adicionar', 'CarrinhoController@adicionar')->name('carrinho.adicionar');
+
 //Pagina Inicial
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/index', 'HomeController@index')->name('index');
 
 /**Route::get('/inicio', function () {
     return view('paginas.home');
 });**/
 
 //Pagina de produtos 
-Route::get('/produtos', 'ProdutoController@paginaProdutos')->name('produtos');
-
-Route::get('/vitrine', 'ProdutoController@vitrine');
+Route::get('/shop','ProdutoController@paginaProdutos')->name('shop');
 
 //detalhes do produto
-Route::get('/produtos/detalhes/{id}', 'ProdutoController@mostra')->where('id','[0-9]+');
+Route::get('/product/{id}', 'ProdutoController@mostra')->where('id','[0-9]+');
 
 
 //Admin
@@ -47,3 +56,30 @@ Auth::routes();
 
 // usage inside a laravel route
 Route::get('/a', 'ImagemController@editarImagem');
+
+
+//teste theme
+
+Route::get('/blog', function () {
+    return view('Theme.paginas.blog');
+});
+
+
+Route::get('/blogsingle', function () {
+    return view('Theme.paginas.blog_single');
+});
+
+Route::get('/cart', function () {
+    return view('Theme.paginas.cart');
+})->name('carrinho');
+
+Route::get('/contact', function () {
+    return view('Theme.paginas.contact');
+})->name('contato');
+
+
+
+Route::get('/regular', function () {
+    return view('Theme.paginas.regular');
+});
+

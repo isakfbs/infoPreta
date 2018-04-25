@@ -19,9 +19,12 @@ class CategoriaTableSeeder extends Seeder {
 	
 	public function run()
 	    {
-	        Categoria::create(['nome' => 'ELETRODOMESTICO']);
-	        Categoria::create(['nome' => 'ELETRONICA']);
-	        Categoria::create(['nome' => 'BRINQUEDO']);
-	        Categoria::create(['nome' => 'ESPORTES']);
+	        Categoria::create(['nome' => 'Computadores & Laptops']);
+	        Categoria::create(['nome' => 'Cameras & Photos']);
+	        Categoria::create(['nome' => 'Smartphones & Tablets']);
+            Categoria::create(['nome' => 'TV & Audio']);
+            Categoria::create(['nome' => 'Acessorios']);
+            Categoria::create(['nome' => 'Gadgets']);
+	        Categoria::create(['nome' => 'Video Games & Consoles']);
 	    } 
 }
